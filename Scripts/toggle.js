@@ -1,4 +1,5 @@
 document.getElementById("cashOut").style.display = 'none';
+document.getElementById("trxBox").style.display = 'none';
 document.getElementById("addMoneyBtn").addEventListener('click', function(){
 
     document.getElementById("addMoney").style.display = 'block';
