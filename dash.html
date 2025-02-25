@@ -10,8 +10,17 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .outfit-font {
+         font-family: "Outfit", serif;
+      }
+    </style>
   </head>
-  <body class="bg-slate-700">
+  <body class="bg-slate-700 outfit-font">
     <div class="min-h-screen w-md mx-auto bg-white p-3">
       <!-- Balance section -->
       <div class="flex justify-between items-center">
@@ -19,7 +28,7 @@
           <img class="w-12" src="./Assets/payoo.png" alt="" />
           <div>
             <p class="text-2xl font-bold">
-              $<span id="mainBalance" class="text-2xl font-bold">0</span>
+              $<span id="mainBalance" class="text-2xl font-bold">1000</span>
             </p>
             <p class="font-medium text-gray-500">Available Balance</p>
           </div>
@@ -37,7 +46,7 @@
 
       <!-- hero -->
       <div class="my-7 space-y-3">
-        <h2 class="font-bold text-3xl">🔥 Welcome to Payooo!</h2>
+        <h2 class="font-bold text-3xl outfit-font">🔥 Welcome to Payooo!</h2>
         <p class="text-gray-500">
           Enjoy easy and convenient financial services with us. Cashout charge
           is low and
@@ -62,31 +71,32 @@
         </div>
 
         <div
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
           <p class="font-medium text-gray-500">Transfer</p>
         </div>
 
         <div
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
-          <p class="font-medium text-gray-500">Add Money</p>
+          <p class="font-medium text-gray-500">Get Bonus</p>
         </div>
 
         <div
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
-          <p class="font-medium text-gray-500">Add Money</p>
+          <p class="font-medium text-gray-500">Pay Bill</p>
         </div>
 
         <div
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          id="trxBtn"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
-          <p class="font-medium text-gray-500">Add Money</p>
+          <p class="font-medium text-gray-500">Transactions</p>
         </div>
       </div>
 
@@ -99,7 +109,7 @@
             <p class="text-xl font-bold">Add Money</p>
             <fieldset class="fieldset">
               <label class="fieldset-label">Select A Bank</label>
-              <select class="select">
+              <select class="select rounded-4xl">
                 <option disabled selected>Select Bank</option>
                 <option>Bkash</option>
                 <option>Rocket</option>
@@ -110,14 +120,14 @@
               <label class="fieldset-label">Bank Account number</label>
               <input
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Enter Bank Account number"
               />
               <label class="fieldset-label">Amount</label>
               <input
                 id="addAmount"
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Enter Amount"
               />
               <label class="fieldset-label">PIN Number</label>
@@ -125,10 +135,13 @@
                 value="1122"
                 id="addPin"
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Ente PIN Number"
               />
-              <button id="addBtn" class="btn btn-neutral mt-4">
+              <button
+                id="addBtn"
+                class="btn btn-neutral bg-[#0874F2] rounded-4xl border-none mt-4"
+              >
                 Add Money
               </button>
             </fieldset>
@@ -142,19 +155,19 @@
         <div class="hero-content flex-col lg:flex-row-reverse"></div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div class="card-body">
-            <p class="text-xl font-bold">Cash OUt</p>
+            <p class="text-xl font-bold">Cash Out</p>
             <fieldset class="fieldset">
               <label class="fieldset-label">Agent number</label>
               <input
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Enter Agent number"
               />
               <label class="fieldset-label">Cashout Amount</label>
               <input
                 id="outAmount"
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Enter Cashout Amount"
               />
               <label class="fieldset-label">PIN Number</label>
@@ -162,16 +175,35 @@
                 value="1122"
                 id="outPin"
                 type="number"
-                class="input"
+                class="input rounded-4xl"
                 placeholder="Ente PIN Number"
               />
-              <button id="outBtn" class="btn btn-neutral mt-4">
-                Cash Out
+              <button
+                id="outBtn"
+                class="btn btn-neutral mt-4 bg-[#0874F2] rounded-4xl border-none"
+              >
+                Withdraw Money
               </button>
             </fieldset>
           </div>
         </div>
       </div>
+
+      <!-- Transactions History -->
+       <div id="trxBox" class="my-5">
+        <h2 class="text-xl font-semibold text-center">Transactions History</h2>
+        <div class="p-5 bg-white shadow-lg rounded-lg mx-5 m y-4">
+          <h2 id="trxName" class="text-xl font-semibold">Add Money</h2>
+          <div class="flex gap-3">
+            <p id="trxAddB"></p>
+            <p class="trxNewB"></p>
+          </div>
+          <p id="trxDate" class="text-[#29E1E7]">Transactions Date</p>
+          
+          </h2>
+        </div>
+       </div>
+
     </div>
 
     <script src="./Scripts/addmoney.js"></script>
