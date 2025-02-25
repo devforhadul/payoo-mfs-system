@@ -19,7 +19,7 @@
           <img class="w-12" src="./Assets/payoo.png" alt="" />
           <div>
             <p class="text-2xl font-bold">
-              $<span id="mainBalance" class="text-2xl font-bold">5000</span>
+              $<span id="mainBalance" class="text-2xl font-bold">0</span>
             </p>
             <p class="font-medium text-gray-500">Available Balance</p>
           </div>
@@ -27,6 +27,7 @@
 
         <div>
           <button
+            id="logOutBtn"
             class="border-2 rounded-md px-3 py-2 border-gray-300 font-semibold text-gray-400"
           >
             Log Out
@@ -46,7 +47,7 @@
       <div class="grid grid-cols-3 gap-4">
         <div
           id="addMoneyBtn"
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
           <p class="font-medium text-gray-500">Add Money</p>
@@ -54,7 +55,7 @@
 
         <div
           id="cashOutBtn"
-          class="border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
+          class="hover:bg-sky-50 cursor-pointer border-1 shadow-md border-gray-300 rounded-md p-4 text-center space-y-1"
         >
           <img class="mx-auto" src="./Assets/wallet_icn.png" alt="" />
           <p class="font-medium text-gray-500">Cash Out</p>
@@ -91,10 +92,11 @@
 
       <!-- Add Money display -->
 
-      <div class="hero bg-white mt-4">
+      <div id="addMoney" class="hero bg-white mt-4">
         <div class="hero-content flex-col lg:flex-row-reverse"></div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div class="card-body">
+            <p class="text-xl font-bold">Add Money</p>
             <fieldset class="fieldset">
               <label class="fieldset-label">Select A Bank</label>
               <select class="select">
@@ -112,7 +114,12 @@
                 placeholder="Enter Bank Account number"
               />
               <label class="fieldset-label">Amount</label>
-              <input id="addAmount" type="number" class="input" placeholder="Enter Amount" />
+              <input
+                id="addAmount"
+                type="number"
+                class="input"
+                placeholder="Enter Amount"
+              />
               <label class="fieldset-label">PIN Number</label>
               <input
                 value="1122"
@@ -121,17 +128,54 @@
                 class="input"
                 placeholder="Ente PIN Number"
               />
-              <button id="addBtn" class="btn btn-neutral mt-4">Add Money</button>
+              <button id="addBtn" class="btn btn-neutral mt-4">
+                Add Money
+              </button>
             </fieldset>
           </div>
         </div>
       </div>
 
+      <!-- CashOut display -->
 
+      <div id="cashOut" class="hero bg-white mt-4">
+        <div class="hero-content flex-col lg:flex-row-reverse"></div>
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div class="card-body">
+            <p class="text-xl font-bold">Cash OUt</p>
+            <fieldset class="fieldset">
+              <label class="fieldset-label">Agent number</label>
+              <input
+                type="number"
+                class="input"
+                placeholder="Enter Agent number"
+              />
+              <label class="fieldset-label">Cashout Amount</label>
+              <input
+                id="outAmount"
+                type="number"
+                class="input"
+                placeholder="Enter Cashout Amount"
+              />
+              <label class="fieldset-label">PIN Number</label>
+              <input
+                value="1122"
+                id="outPin"
+                type="number"
+                class="input"
+                placeholder="Ente PIN Number"
+              />
+              <button id="outBtn" class="btn btn-neutral mt-4">
+                Cash Out
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
     </div>
 
-
     <script src="./Scripts/addmoney.js"></script>
-
+    <script src="./Scripts/toggle.js"></script>
+    <script src="./Scripts/cashout.js"></script>
   </body>
 </html>

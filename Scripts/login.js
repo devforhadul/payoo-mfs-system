@@ -9,10 +9,10 @@ document.getElementById("loginBtn").addEventListener("click", function(event){
             window.location.href = "./dash.html"
         }
         else{
-            console.log("Invalid PIN");
+            alert("Invalid PIN");
         }
     }
     else{
-        console.log("Invalid Number");
+        alert("Invalid Number");
     }
 })
